@@ -3,6 +3,11 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
+  def random
+    @cocktail = Cocktail.all.sample
+    redirect_to cocktail_path(@cocktail)
+  end
+
   def new
     @cocktail = Cocktail.new
   end
@@ -19,6 +24,7 @@ class CocktailsController < ApplicationController
   def show
     @cocktail = Cocktail.find(params[:id])
     @dose = Dose.new
+    @review = Review.new
   end
 
   private

@@ -1,0 +1,5 @@
+      <%= simple_form_for [cocktail, review] do |f| %>
+        <%= f.input :rating, collection: Review::RATINGS, input_html: { class: "beautiful-dropdown"} %>
+        <%= f.input :content %>
+        <%= f.submit 'Leave a review', class: "btn btn-warning" %>
+      <% end %>
