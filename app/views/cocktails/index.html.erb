@@ -1,20 +1,26 @@
 <div class="banner">
   <div class="container">
     <h1>Marcel's Mr. Cocktail!</h1>
-    <p>Change your life and learn how to create the best cocktails on earth!.</p>
+    <p>Change your life and learn how to create the best cocktails on earth!</p>
     <%= link_to "Create your own", new_cocktail_path, class: "btn btn-danger rounded" %>
   </div>
 </div>
 
-<h2 class="my-3">Take a look at some of our wonderful cocktails!</h2>
+<div class="container mb-5">
+  <h2 class="my-3 text-align-center header-home">Take a look at some of our wonderful cocktails!</h2>
 
-<div class="cards">
-  <% @cocktails.each do |cocktail| %>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1470337458703-46ad1756a187?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1349&q=80)">
-    <%= cocktail.name %>
+  <div class="cards">
+    <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail_path(cocktail) do %>
+
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(<%= cl_image_path cocktail.photo.key %>)">
+          <p><%= cocktail.name %></p>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <% end %>
 </div>
+
 
 
 
