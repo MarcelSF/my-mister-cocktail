@@ -25,15 +25,15 @@ isa = ["https://res.cloudinary.com/dlatcqlhm/image/upload/v1590779042/public-fol
 
 cocktails = [caipirinha, irish, milene, margarita, andre, whisky, matheus, campari, mojito, orange, gin, isa]
 
-review_content = ["Delicious!", "Easy to make and drink", "Hate it x_x", "Not for my taste", "Could be better if it had more Whisky", "Needs more sugar", "Perfect for lazy Sundays!", "One of my all time favorites!", "This stuff ir horrible!", "Pure bliss"]
+review_content = ["Delicious!", "Easy to make and drink", "Hate it x_x", "Not for my taste", "Could be better if it had more Whisky", "Needs more sugar", "Perfect for lazy Sundays!", "One of my all time favorites!", "This stuff is horrible!", "Pure bliss"]
 
 descriptions = ["1 ounce", "100ml", "As much as you can", "1 table spoon", "Pour an entire bottle", "just one drop", "Up to you, really", "50ml", "100ml", "50gr"]
 
 puts "Destroy Cocktails"
-Cocktail.destroy_all if Rails.env.development?
+Cocktail.destroy_all
 
 puts "Destroy ingredients"
-Ingredient.destroy_all if Rails.env.development?
+Ingredient.destroy_all
 
 
 puts "Creating Ingredients"
